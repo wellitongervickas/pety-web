@@ -1,5 +1,8 @@
 {
   "compilerOptions": {
+    "removeComments": true,
+    "importHelpers": true,
+    "forceConsistentCasingInFileNames": true,
     "target": "ES2018",
     "module": "ESNext",
     "moduleResolution": "Node",
@@ -26,7 +29,8 @@
     "types": [
       "@nuxt/types",
       "@nuxtjs/axios",
-      "@types/node"
+      "@types/node",
+      "@types/jest"
     ]
   },
   "exclude": [
