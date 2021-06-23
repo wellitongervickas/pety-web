@@ -14,11 +14,7 @@
 </template>
 
 <script lang="ts">
-import {
-  Prop,
-  Vue,
-  Component,
-} from 'nuxt-property-decorator'
+import { Prop, Vue, Component } from 'nuxt-property-decorator'
 
 import { Transaction } from '@/components/finances/Transactions'
 
@@ -26,8 +22,8 @@ type TransactionsImp = Array<Pick<{ id: string }, 'id'>>
 
 @Component({
   components: {
-    Transaction
-  }
+    Transaction,
+  },
 })
 export default class Transactions extends Vue {
   @Prop({ required: true })
