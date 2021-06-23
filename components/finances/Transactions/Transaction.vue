@@ -19,7 +19,7 @@ export default class Transaction extends Vue {
   transaction!: TransactionImp
 
   get date() {
-    return new Intl.DateTimeFormat('pt-BR').format(
+    return new Intl.DateTimeFormat('pt-BR', { timeZone: 'UTC' }).format(
       this.transaction.date_timestamp
     )
   }
