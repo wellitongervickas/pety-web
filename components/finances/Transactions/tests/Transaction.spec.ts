@@ -1,17 +1,23 @@
 import { mount } from '@vue/test-utils'
 import { Transaction } from '@/components/finances/Transactions'
+import { format } from 'date-fns'
 
 describe('Transaction', () => {
   test('renders transaction date', () => {
+    const date = format(
+      new Date(2014, 1, 11, 14, 33, 22),
+      'yyyy-MM-dd HH:MM:SS'
+    )
+
     const wrapper = mount(Transaction, {
       propsData: {
         transaction: {
           id: 'some_id',
-          date: '2021-06-21 14:38:31',
+          date,
         },
       },
     })
 
-    expect(wrapper.text().includes('21/06/2021 às 14:38:31')).toBeTruthy()
+    expect(wrapper.text().includes(`11/02/2014 às 14:02:00`)).toBeTruthy()
   })
 })
