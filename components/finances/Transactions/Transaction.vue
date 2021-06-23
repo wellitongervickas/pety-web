@@ -21,6 +21,7 @@ export default class Transaction extends Vue {
     const dateIso = parseISO(this.transaction.date)
     const zoneTime = zonedTimeToUtc(dateIso, 'America/Sao_Paulo')
 
+    console.log(format(zoneTime, "dd/MM/yyyy 'às' HH:mm:ss"))
     return format(zoneTime, "dd/MM/yyyy 'às' HH:mm:ss")
   }
 }
