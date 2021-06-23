@@ -10,8 +10,8 @@ import Transactions from '~/components/finances/Transactions'
 
 @Component({
   components: {
-    Transactions
-  }
+    Transactions,
+  },
 })
 export default class FinancesTransactions extends Vue {
   transactions = [
@@ -25,5 +25,4 @@ export default class FinancesTransactions extends Vue {
     },
   ]
 }
-
 </script>
