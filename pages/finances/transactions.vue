@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
-import Transactions from '~/components/finances/Transactions'
+import Transactions from '@/components/finances/Transactions'
 
 @Component({
   components: {
@@ -17,11 +17,11 @@ export default class FinancesTransactions extends Vue {
   transactions = [
     {
       id: '1',
-      date_timestamp: 1624297111368,
+      date: '2021-06-21 14:38:31',
     },
     {
       id: '2',
-      date_timestamp: 1624297511468,
+      date: '2021-03-21 14:38:31',
     },
   ]
 }

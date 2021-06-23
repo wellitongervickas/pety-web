@@ -7,12 +7,11 @@ describe('Transaction', () => {
       propsData: {
         transaction: {
           id: 'some_id',
-          date_timestamp: 1624297111368,
+          date: '2021-06-21 14:38:31',
         },
       },
     })
 
-    expect(wrapper.text().includes('21/06/2021')).toBeTruthy()
-    expect(wrapper.text().includes('14:38:31')).toBeTruthy()
+    expect(wrapper.text().includes('21/06/2021 às 14:38:31')).toBeTruthy()
   })
 })

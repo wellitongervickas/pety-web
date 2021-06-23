@@ -15,10 +15,7 @@
 
 <script lang="ts">
 import { Prop, Vue, Component } from 'nuxt-property-decorator'
-
 import { Transaction } from '@/components/finances/Transactions'
-
-type TransactionsImp = Array<Pick<{ id: string }, 'id'>>
 
 @Component({
   components: {
@@ -27,7 +24,7 @@ type TransactionsImp = Array<Pick<{ id: string }, 'id'>>
 })
 export default class Transactions extends Vue {
   @Prop({ required: true })
-  transactions!: TransactionsImp
+  transactions!: Array<Pick<{ id: string }, 'id'>>
 
   get isEmpty() {
     return !this.transactions.length
