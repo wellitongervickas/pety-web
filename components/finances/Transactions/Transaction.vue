@@ -7,7 +7,6 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'nuxt-property-decorator'
 import { format, parseISO } from 'date-fns'
-import { zonedTimeToUtc } from 'date-fns-tz'
 
 @Component
 export default class Transaction extends Vue {
@@ -19,9 +18,8 @@ export default class Transaction extends Vue {
 
   get date() {
     const dateIso = parseISO(this.transaction.date)
-    const utcDate = zonedTimeToUtc(dateIso, 'America/Sao_Paulo')
 
-    return format(utcDate, "dd/MM/yyyy 'às' HH:MM:SS")
+    return format(dateIso, "dd/MM/yyyy 'às' HH:MM:SS")
   }
 }
 </script>
