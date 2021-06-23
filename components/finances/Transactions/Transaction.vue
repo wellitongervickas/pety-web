@@ -19,7 +19,7 @@ export default class Transaction extends Vue {
   get date() {
     const dateIso = parseISO(this.transaction.date)
 
-    return format(dateIso, "dd/MM/yyyy 'às' HH:MM:SS")
+    return format(dateIso, "dd/MM/yyyy 'às' H:mm:ss")
   }
 }
 </script>

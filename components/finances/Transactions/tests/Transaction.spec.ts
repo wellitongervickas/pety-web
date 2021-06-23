@@ -4,10 +4,7 @@ import { format } from 'date-fns'
 
 describe('Transaction', () => {
   test('renders transaction date', () => {
-    const date = format(
-      new Date(2014, 1, 11, 14, 33, 22),
-      'yyyy-MM-dd HH:MM:SS'
-    )
+    const date = format(new Date(2014, 1, 11, 14, 33, 22), 'yyyy-MM-dd H:mm:ss')
 
     const wrapper = mount(Transaction, {
       propsData: {
@@ -18,6 +15,6 @@ describe('Transaction', () => {
       },
     })
 
-    expect(wrapper.text().includes(`11/02/2014 às 14:02:00`)).toBeTruthy()
+    expect(wrapper.text().includes(`11/02/2014 às 14:33:22`)).toBeTruthy()
   })
 })
