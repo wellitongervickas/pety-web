@@ -1,17 +1,29 @@
 import { mount } from '@vue/test-utils'
-import { Transactions, Transaction } from '@/components/finances/Transactions'
+import Transactions, { Transaction } from '@/components/finances/Transactions'
 
-describe('Transaction', () => {
-  test('renders transaction date', () => {
+describe('Transactions', () => {
+  test('renders every transaction', () => {
+    const transactions = [
+      {
+        id: '1',
+        date_timestamp: 1624297111368,
+      },
+      {
+        id: '2',
+        date_timestamp: 1624297511468,
+      },
+    ]
+
     const wrapper = mount(Transactions, {
       components: {
         Transaction,
       },
       propsData: {
-        transactions: [{}],
+        transactions,
       },
     })
 
-    expect(wrapper.getComponent(Transaction)).toBeTruthy()
+    const transactionElements = wrapper.findAll('.transaction')
+    expect(transactionElements.length).toBe(2)
   })
 })

@@ -1,27 +1,29 @@
 <template>
-  <div>
-    <div class="p-3 bg-white border">
-      <transactions :transactions="transactions" />
-    </div>
+  <div class="finances">
+    <transactions :transactions="transactions" />
   </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import { Transactions } from '~/components/finances/Transactions'
+import { Vue, Component } from 'nuxt-property-decorator'
+import Transactions from '~/components/finances/Transactions'
 
-export default Vue.extend({
-  name: 'FinancesTransactions',
+@Component({
   components: {
-    Transactions,
-  },
-  data: () => ({
-    transactions: [
-      {
-        id: '1',
-        date_timestamp: 1624297111368,
-      },
-    ],
-  }),
+    Transactions
+  }
 })
+export default class FinancesTransactions extends Vue {
+  transactions = [
+    {
+      id: '1',
+      date_timestamp: 1624297111368,
+    },
+    {
+      id: '2',
+      date_timestamp: 1624297511468,
+    },
+  ]
+}
+
 </script>
